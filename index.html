@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">https://github.com/CARRERAAPK/CARRERAAPK.github.io/tree/main
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licorería JH y El Duende</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #fdfae7; }
+        .hero-section { background-color: #063d1e; }
+        .card { background-color: white; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+    <nav class="hero-section text-white p-4 flex justify-between items-center px-10">
+        <div class="flex items-center gap-2">
+            <span class="font-bold">LICORERIA JH Y EL DUENDE</span>
+        </div>
+        <div class="hidden md:flex gap-6 text-sm">
+            <a href="#">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="#">Contacto</a>
+        </div>
+    </nav>
+
+    <section class="hero-section text-center text-white py-16 px-4">
+        <h1 class="text-4xl font-bold mb-2">LICORERIA JH Y EL DUENDE</h1>
+        <p class="text-xl mb-6 text-yellow-100">Cervezas y Licores a Domicilio en Ecuador</p>
+        
+        <div class="flex flex-col items-center gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="h-12">
+            <div class="bg-white p-2 inline-block rounded-lg">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://play.google.com" alt="QR Code" class="w-32">
+            </div>
+            <p class="text-xs uppercase tracking-widest">Escanear para descargar</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
+            <div class="card p-8 text-black shadow-lg">
+                <div class="text-3xl mb-2">🍺</div>
+                <h3 class="font-bold text-lg">App Fácil</h3>
+                <p class="text-sm text-gray-600">Pide tus cervezas favoritas de forma rápida.</p>
+            </div>
+            <div class="card p-8 text-black shadow-lg">
+                <div class="text-3xl mb-2">🍾</div>
+                <h3 class="font-bold text-lg">Variedad</h3>
+                <p class="text-sm text-gray-600">Gran selección de licores y bebidas.</p>
+            </div>
+            <div class="card p-8 text-black shadow-lg">
+                <div class="text-3xl mb-2">🚚</div>
+                <h3 class="font-bold text-lg">Servicio</h3>
+                <p class="text-sm text-gray-600">Entregas a domicilio rápidas y seguras.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+            <h2 class="text-2xl font-bold mb-6 border-b-2 border-gray-300 pb-2">Contáctanos</h2>
+            <div class="space-y-4 text-gray-800">
+                <p><strong>Teléfono:</strong> 0995368848</p>
+                <p><strong>Ciudad:</strong> Machala - Ecuador</p>
+                <p><strong>Email:</strong> contact@jhyelduende.com</p>
+            </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
+            <h2 class="text-2xl font-bold mb-6 text-center">Formulario</h2>
+            <form class="flex flex-col gap-4">
+                <input type="text" placeholder="Nombre" class="border p-3 rounded bg-gray-50 outline-none">
+                <input type="email" placeholder="Email" class="border p-3 rounded bg-gray-50 outline-none">
+                <textarea placeholder="Mensaje" rows="3" class="border p-3 rounded bg-gray-50 outline-none"></textarea>
+                <button type="button" class="bg-orange-200 hover:bg-orange-300 text-orange-900 font-bold py-3 rounded-full transition">ENVIAR</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
