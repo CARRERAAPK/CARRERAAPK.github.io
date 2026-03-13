@@ -12,8 +12,9 @@
         .card:hover { transform: translateY(-8px); shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
         .btn-whatsapp { background-color: #25d366; color: white; transition: background 0.3s; }
         .btn-whatsapp:hover { background-color: #128c7e; }
-        .link-maps { color: #063d1e; text-decoration: underline; transition: color 0.3s; }
-        .link-maps:hover { color: #15803d; }
+        /* Estilo especial para que se note que es un enlace */
+        .link-maps { color: #063d1e; text-decoration: underline; cursor: pointer; }
+        .link-maps:hover { color: #15803d; background-color: #f0fdf4; }
     </style>
 </head>
 <body>
@@ -48,15 +49,15 @@
             <div class="space-y-8 text-xl text-gray-800">
                 
                 <div class="flex flex-col gap-2">
-                    <span class="text-xs uppercase text-gray-400 font-black tracking-widest">Toca la dirección para ver en el mapa:</span>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Calle+Machala+N60-150+y+Flavio+Alfaro+Quito+Ecuador" target="_blank" class="link-maps font-bold text-2xl">
+                    <span class="text-xs uppercase text-gray-400 font-black tracking-widest italic">Haz clic en la dirección para abrir el GPS:</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Calle+Machala+N60-150+y+Flavio+Alfaro+Quito" target="_blank" class="link-maps font-bold text-2xl block p-2 rounded-lg">
                         📍 Calle Machala N60-150 y Flavio Alfaro
                     </a>
-                    <p class="text-lg">Quito - Ecuador</p>
+                    <p class="text-lg px-2">Quito - Ecuador</p>
                 </div>
                 
                 <div class="flex flex-col gap-2">
-                    <span class="text-xs uppercase text-gray-400 font-black tracking-widest">Horario:</span>
+                    <span class="text-xs uppercase text-gray-400 font-black tracking-widest font-bold">Horario:</span>
                     <p class="text-green-800 font-black bg-green-50 p-5 rounded-2xl border-2 border-green-800 text-center uppercase tracking-widest">
                         🟢 Abierto las 24 horas
                     </p>
@@ -75,7 +76,7 @@
                 <div class="text-4xl">🛵</div>
                 <div>
                     <h3 class="font-black text-lg uppercase">Servicio Express</h3>
-                    <p class="text-gray-500 text-sm italic text-sm">Entregas rápidas en todo el norte de Quito.</p>
+                    <p class="text-gray-500 text-sm italic">Entregas rápidas en todo el norte de Quito.</p>
                 </div>
             </div>
             <div class="card p-8 shadow-xl border border-gray-100 flex items-center gap-6">
@@ -89,14 +90,14 @@
                 <div class="text-4xl">🔐</div>
                 <div>
                     <h3 class="font-black text-lg uppercase">Compra Segura</h3>
-                    <p class="text-gray-500 text-sm italic">Atención de confianza las 24 horas del día.</p>
+                    <p class="text-gray-500 text-sm italic text-sm">Atención de confianza las 24 horas del día.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="text-center py-10 text-gray-400 text-xs border-t border-gray-100 font-bold tracking-tighter uppercase">
-        &copy; 2026 LICORERÍA JH Y EL DUENDE | QUITO, ECUADOR
+        © 2026 LICORERÍA JH Y EL DUENDE | QUITO, ECUADOR
     </footer>
 
 </body>
