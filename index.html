@@ -3,102 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Licorería JH y El Duende</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Taurus Fitness Center | Carrera APK</title>
     <style>
-        body { background-color: #fdfae7; }
-        .hero-section { background-color: #063d1e; }
-        .card { background-color: white; border-radius: 12px; transition: all 0.3s; }
-        .card:hover { transform: translateY(-8px); shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-        .btn-whatsapp { background-color: #25d366; color: white; transition: background 0.3s; }
-        .btn-whatsapp:hover { background-color: #128c7e; }
-        /* Estilo especial para que se note que es un enlace */
-        .link-maps { color: #063d1e; text-decoration: underline; cursor: pointer; }
-        .link-maps:hover { color: #15803d; background-color: #f0fdf4; }
+        /* Estilos Globales */
+        :root {
+            --primary-red: #e31e24;
+            --whatsapp-green: #25d366;
+            --dark-bg: #000000;
+            --light-gray: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), 
+                        url('https://carreraapk.github.io/imagen1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            background-color: var(--primary-red);
+            padding: 5px 15px;
+        }
+
+        .btn-main {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            background-color: #b3161a;
+        }
+
+        /* Botón Flotante WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+        }
+
+        /* Buscador */
+        .search-container {
+            padding: 40px 20px;
+            text-align: center;
+            background: var(--light-gray);
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 20px auto;
+            display: flex;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-box button {
+            padding: 15px 25px;
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        /* Seccion de Beneficios */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px 20px;
+        }
+
+        .feature-item {
+            position: relative;
+            width: 350px;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .feature-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .feature-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* Planes */
+        .pricing {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .plan-card {
+            border: 1px solid #eee;
+            padding: 40px 20px;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .plan-card.highlight {
+            border: 2px solid var(--primary-red);
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .price { color: var(--primary-red); font-size: 2rem; font-weight: bold; }
+
+        /* Footer Banner */
+        .footer-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://carreraapk.github.io/imagen5.jpg');
+            background-size: cover;
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .plan-card.highlight { transform: none; }
+        }
     </style>
 </head>
 <body>
 
-    <nav class="hero-section text-white p-4 flex justify-between items-center px-6 md:px-12 border-b border-green-900">
-        <div class="flex items-center gap-3">
-            <img src="licoreria.png" alt="Logo" class="h-12 w-12 rounded-full object-cover border-2 border-yellow-200 shadow-sm">
-            <span class="font-bold tracking-tight uppercase text-xs md:text-base">LICORERIA JH Y EL DUENDE</span>
-        </div>
-        <div class="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-wider">
-            <a href="#" class="hover:text-yellow-200 text-yellow-100 italic font-bold">ABIERTO 24H</a>
-        </div>
-    </nav>
+    <a href="https://wa.me/593963969803?text=Hola!%20Me%20gustaría%20obtener%20información%20sobre%20los%20planes%20del%20gimnasio" class="whatsapp-float" target="_blank">
+        <svg width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.17-.479 1.338-.942.168-.464.168-.863.118-.942-.049-.079-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
 
-    <section class="hero-section text-center text-white py-16 px-4">
-        <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tighter uppercase">Licorería JH y El Duende</h1>
-        <div class="inline-block bg-yellow-400 text-green-900 font-black px-6 py-2 rounded-full text-sm mb-10 uppercase tracking-[0.2em] shadow-lg">
-            Atención las 24 horas
-        </div>
-        
-        <div class="flex flex-col items-center gap-6 mb-12">
-            <div class="bg-white p-6 inline-block rounded-[2rem] shadow-2xl border-4 border-yellow-200">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/593995368848?text=Hola,%20quisiera%20hacer%20un%20pedido%20a%20domicilio" alt="QR WhatsApp" class="w-48 h-48 md:w-56 md:h-56">
-            </div>
-            <p class="text-sm md:text-base uppercase tracking-[0.3em] text-yellow-200 font-black">Escanea para pedir por WhatsApp</p>
+    <header class="hero">
+        <h1>EL GIMNASIO DONDE <br><span>SACAS TU MEJOR VERSIÓN</span></h1>
+        <a href="https://wa.me/593963969803" class="btn-main" target="_blank">ÚNETE AHORA</a>
+    </header>
+
+    <section class="search-container">
+        <h2>ENCUENTRA TU GIMNASIO IDEAL</h2>
+        <div class="search-box">
+            <input type="text" placeholder="Busca por ciudad o sector...">
+            <button>BUSCAR</button>
         </div>
     </section>
 
-    <section class="max-w-6xl mx-auto py-20 px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
-        <div class="flex flex-col justify-center">
-            <h2 class="text-3xl font-black mb-8 border-b-8 border-green-800 inline-block pb-2 uppercase text-green-900">Ubicación y Horario</h2>
-            <div class="space-y-8 text-xl text-gray-800">
-                
-                <div class="flex flex-col gap-2">
-                    <span class="text-xs uppercase text-gray-400 font-black tracking-widest italic">Haz clic en la dirección para abrir el GPS:</span>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Calle+Machala+N60-150+y+Flavio+Alfaro+Quito" target="_blank" class="link-maps font-bold text-2xl block p-2 rounded-lg">
-                        📍 Calle Machala N60-150 y Flavio Alfaro
-                    </a>
-                    <p class="text-lg px-2">Quito - Ecuador</p>
-                </div>
-                
-                <div class="flex flex-col gap-2">
-                    <span class="text-xs uppercase text-gray-400 font-black tracking-widest font-bold">Horario:</span>
-                    <p class="text-green-800 font-black bg-green-50 p-5 rounded-2xl border-2 border-green-800 text-center uppercase tracking-widest">
-                        🟢 Abierto las 24 horas
-                    </p>
-                </div>
-                
-                <div class="pt-4">
-                    <a href="https://wa.me/593995368848?text=Hola,%20quisiera%20hacer%20un%20pedido" target="_blank" class="btn-whatsapp flex items-center justify-center gap-4 px-10 py-5 rounded-full font-black shadow-lg transform hover:scale-105 transition uppercase text-sm">
-                        <span>📱 Pedir por WhatsApp</span>
-                    </a>
-                </div>
+    <section class="features">
+        <div class="feature-item">
+            <img src="https://carreraapk.github.io/imagen2.jpg" alt="Acceso Ilimitado">
+            <div class="feature-text">
+                <h3>ACCESO <b>ILIMITADO</b></h3>
+                <p>Entrena en cualquier sede nacional.</p>
             </div>
         </div>
-
-        <div class="grid grid-cols-1 gap-6">
-            <div class="card p-8 shadow-xl border border-gray-100 flex items-center gap-6">
-                <div class="text-4xl">🛵</div>
-                <div>
-                    <h3 class="font-black text-lg uppercase">Servicio Express</h3>
-                    <p class="text-gray-500 text-sm italic">Entregas rápidas en todo el norte de Quito.</p>
-                </div>
-            </div>
-            <div class="card p-8 shadow-xl border border-gray-100 flex items-center gap-6">
-                <div class="text-4xl">❄️</div>
-                <div>
-                    <h3 class="font-black text-lg uppercase">Bebidas Heladas</h3>
-                    <p class="text-gray-500 text-sm italic">Cervezas y licores listos para el brindis.</p>
-                </div>
-            </div>
-            <div class="card p-8 shadow-xl border border-gray-100 flex items-center gap-6">
-                <div class="text-4xl">🔐</div>
-                <div>
-                    <h3 class="font-black text-lg uppercase">Compra Segura</h3>
-                    <p class="text-gray-500 text-sm italic text-sm">Atención de confianza las 24 horas del día.</p>
-                </div>
+        <div class="feature-item">
+            <img src="https://carreraapk.github.io/imagen3.jpg" alt="Mejor Precio">
+            <div class="feature-text">
+                <h3>EL MEJOR <b>PRECIO</b></h3>
+                <p>Planes desde $21.80 al mes.</p>
             </div>
         </div>
     </section>
 
-    <footer class="text-center py-10 text-gray-400 text-xs border-t border-gray-100 font-bold tracking-tighter uppercase">
-        © 2026 LICORERÍA JH Y EL DUENDE | QUITO, ECUADOR
-    </footer>
+    <section class="pricing">
+        <h2>NUESTRAS <span>SUSCRIPCIONES</span></h2>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <h3>TAURUS</h3>
+                <p class="price">$21.80<span>/mes</span></p>
+                <p>Sin compromiso de permanencia</p>
+                <hr>
+                <p>Acceso zona pesas y cardio</p>
+                <a href="https://wa.me/593963969803?text=Quiero%20el%20plan%20Taurus" class="btn-main" target="_blank">ELIJO TAURUS</a>
+            </div>
+            <div class="plan-card highlight">
+                <h3>PLUS</h3>
+                <p class="price">$27.80<span>/mes</span></p>
+                <p>Acceso a todas las sedes</p>
+                <hr>
+                <p>Sillones de masaje</p>
+                <a href="https://wa.me/593963969803?text=Quiero%20el%20plan%20Plus" class="btn-main" target="_blank">ELIJO PLUS</a>
+            </div>
+            <div class="plan-card">
+                <h3>PREMIUM</h3>
+                <p class="price">$34.80<span>/mes</span></p>
+                <p>Entrenamiento Inteligente</p>
+                <hr>
+                <p>Acceso a Piscina</p>
+                <a href="https://wa.me/593963969803?text=Quiero%20el%20plan%20Premium" class="btn-main" target="_blank">ELIJO PREMIUM</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-banner">
+        <h2>¡NO PARES NUNCA!</h2>
+        <p>Mejora tu ritmo cada semana con nuestras nuevas clases colectivas.</p>
+        <img src="https://carreraapk.github.io/imagen4.jpg" alt="Promo" style="max-width: 300px; display: block; margin: 20px auto; border-radius: 10px;">
+        <a href="https://wa.me/593963969803" class="btn-main" target="_blank">CHATEAR CON UN ASESOR</a>
+    </section>
 
 </body>
 </html>
