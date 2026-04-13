@@ -26,12 +26,14 @@
             color: #333; 
             background-color: #fff; 
             line-height: 1.6;
-            /* SE ACTUALIZÓ EL NOMBRE DE LA IMAGEN DE FONDO */
-            background-image: linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)), url('icono_el_gas.png');
+            
+            /* SE APLICÓ escritorio.jpg COMO MARCA DE AGUA EN TODO EL FONDO */
+            /* El rgba(255,255,255,0.92) genera el efecto de transparencia blanca sobre la imagen */
+            background-image: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('escritorio.jpg');
             background-attachment: fixed;
-            background-position: left 5% center;
+            background-position: center;
             background-repeat: no-repeat;
-            background-size: 500px;
+            background-size: cover;
         }
         
         .top-info { background: var(--azul-oscuro); color: white; padding: 8px; font-size: 13px; position: relative; z-index: 10; }
@@ -42,6 +44,7 @@
         .menu a { text-decoration: none; color: #333; margin: 0 15px; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .menu a:hover { color: var(--naranja); }
 
+        /* Mantenemos el fondo sólido en la sección de la App para contraste */
         .app-section { background: var(--azul-elgas); color: white; padding: 60px 20px; position: relative; }
         .app-section h1 { font-size: 35px; margin: 0 0 10px; }
         .playstore-btn { display: inline-block; margin: 20px 0 10px; transition: transform 0.2s; }
@@ -58,7 +61,7 @@
         .qr-text { font-size: 14px; margin-top: 8px; font-weight: bold; color: white; }
 
         .features { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; max-width: 1200px; margin: 40px auto 0; }
-        .card { background: rgba(255, 255, 255, 0.85); color: #333; flex: 1; min-width: 250px; max-width: 300px; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .card { background: rgba(255, 255, 255, 0.9); color: #333; flex: 1; min-width: 250px; max-width: 300px; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .card i { font-size: 35px; color: var(--naranja); margin-bottom: 15px; display: block; }
         .card h3 { color: var(--azul-elgas); margin: 0 0 10px 0; }
 
@@ -69,7 +72,7 @@
         .policy-link { color: var(--azul-elgas); font-weight: bold; text-decoration: none; }
         .policy-link:hover { text-decoration: underline; }
         
-        .form-box { flex: 1; min-width: 300px; max-width: 500px; border: 1px solid #ddd; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: white; text-align: left; }
+        .form-box { flex: 1; min-width: 300px; max-width: 500px; border: 1px solid #ddd; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: rgba(255, 255, 255, 0.95); text-align: left; }
         .form-box h2 { font-size: 28px; margin: 0 0 5px 0; color: var(--azul-oscuro); font-weight: bold; text-align: center; }
         .form-box p { text-align: center; margin-bottom: 25px; color: #666; font-size: 15px; }
         
@@ -88,7 +91,6 @@
         .wa-btn:hover { transform: scale(1.1); }
 
         @media (max-width: 768px) {
-            body { background-size: 300px; background-position: left 2% center; }
             .contact-container { padding: 40px 5%; }
         }
     </style>
@@ -100,7 +102,7 @@
     </div>
 
     <nav class="navbar">
-        <img src="icon_el_gas.png" alt="EL GAS" class="logo-nav" onclick="location.reload();">
+        <img src="icono_el_gas.png" alt="EL GAS" class="logo-nav" onclick="location.reload();">
         <div class="menu">
             <a onclick="location.reload();">Inicio</a>
             <a href="https://play.google.com/store/apps/details?id=com.carrerabg.elgas" target="_blank">Descargar App</a>
