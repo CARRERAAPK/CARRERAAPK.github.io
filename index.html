@@ -26,9 +26,9 @@
             color: #333; 
             background-color: #fff; 
             line-height: 1.6;
-            background-image: linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)), url('icon_elgas.png');
+            /* SE ACTUALIZÓ EL NOMBRE DE LA IMAGEN DE FONDO */
+            background-image: linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)), url('icono_el_gas.png');
             background-attachment: fixed;
-            /* SE CAMBIÓ LA POSICIÓN A LA IZQUIERDA CON UN 5% DE MARGEN */
             background-position: left 5% center;
             background-repeat: no-repeat;
             background-size: 500px;
@@ -69,7 +69,6 @@
         .policy-link { color: var(--azul-elgas); font-weight: bold; text-decoration: none; }
         .policy-link:hover { text-decoration: underline; }
         
-        /* FORMULARIO DE CONTACTO */
         .form-box { flex: 1; min-width: 300px; max-width: 500px; border: 1px solid #ddd; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: white; text-align: left; }
         .form-box h2 { font-size: 28px; margin: 0 0 5px 0; color: var(--azul-oscuro); font-weight: bold; text-align: center; }
         .form-box p { text-align: center; margin-bottom: 25px; color: #666; font-size: 15px; }
@@ -83,14 +82,12 @@
         .btn-enviar { background: var(--naranja); color: white; border: none; padding: 12px 0; border-radius: 25px; font-weight: bold; font-size: 16px; width: 100%; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; text-align: center; }
         .btn-enviar:hover { background: #e26f1e; transform: translateY(-2px); }
 
-        /* EL BOTÓN DE WHATSAPP QUE LLEVA A PLAY STORE */
         .floating { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; z-index: 1000; }
         .chat-tag { background: white; padding: 5px 15px; border-radius: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); font-weight: bold; font-size: 12px; }
         .wa-btn { background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: 0.3s; }
         .wa-btn:hover { transform: scale(1.1); }
 
         @media (max-width: 768px) {
-            /* SE AJUSTÓ LA POSICIÓN EN MÓVILES PARA QUE NO SE CORTE */
             body { background-size: 300px; background-position: left 2% center; }
             .contact-container { padding: 40px 5%; }
         }
@@ -103,7 +100,7 @@
     </div>
 
     <nav class="navbar">
-        <img src="icon_elgas.png" alt="EL GAS" class="logo-nav" onclick="location.reload();">
+        <img src="icono_el_gas.png" alt="EL GAS" class="logo-nav" onclick="location.reload();">
         <div class="menu">
             <a onclick="location.reload();">Inicio</a>
             <a href="https://play.google.com/store/apps/details?id=com.carrerabg.elgas" target="_blank">Descargar App</a>
