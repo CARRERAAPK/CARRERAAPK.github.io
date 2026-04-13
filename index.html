@@ -3,576 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taurus Fitness Center | Tu Mejor Versión - CARRERA APK</title>
+    <title>EL GAS - App Oficial Ecuador</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <style>
-        /* Estilos Globales y Reset */
         :root {
-            --primary-red: #e31e24;
-            --whatsapp-green: #25d366;
-            --dark-bg: #111111;
-            --light-bg: #fdfdfd;
-            --white: #ffffff;
-            --text-main: #333333;
-            --text-sub: #666666;
+            --azul-elgas: #075AA8;
+            --azul-oscuro: #003366;
+            --naranja: #f38230;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', 'Roboto', 'Helvetica', Arial, sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text-main);
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: 'Titillium Web', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            text-align: center; 
+            color: #333; 
+            background-color: #fff; 
             line-height: 1.6;
-            overflow-x: hidden;
+            background-image: linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)), url('icon_elgas.png');
+            background-attachment: fixed;
+            /* SE CAMBIÓ LA POSICIÓN A LA IZQUIERDA CON UN 5% DE MARGEN */
+            background-position: left 5% center;
+            background-repeat: no-repeat;
+            background-size: 500px;
         }
+        
+        .top-info { background: var(--azul-oscuro); color: white; padding: 8px; font-size: 13px; position: relative; z-index: 10; }
 
-        a {
-            text-decoration: none;
-            transition: 0.3s;
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 8%; background: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .logo-nav { height: 60px; cursor: pointer; }
+        .menu { display: flex; align-items: center; }
+        .menu a { text-decoration: none; color: #333; margin: 0 15px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .menu a:hover { color: var(--naranja); }
+
+        .app-section { background: var(--azul-elgas); color: white; padding: 60px 20px; position: relative; }
+        .app-section h1 { font-size: 35px; margin: 0 0 10px; }
+        .playstore-btn { display: inline-block; margin: 20px 0 10px; transition: transform 0.2s; }
+        .playstore-btn:hover { transform: scale(1.05); }
+
+        .qr-container { margin: 20px 0 40px; }
+        .qr-code { 
+            border: 4px solid white; 
+            border-radius: 12px; 
+            background: white; 
+            padding: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
+        .qr-text { font-size: 14px; margin-top: 8px; font-weight: bold; color: white; }
 
-        ul {
-            list-style: none;
-        }
+        .features { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; max-width: 1200px; margin: 40px auto 0; }
+        .card { background: rgba(255, 255, 255, 0.85); color: #333; flex: 1; min-width: 250px; max-width: 300px; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .card i { font-size: 35px; color: var(--naranja); margin-bottom: 15px; display: block; }
+        .card h3 { color: var(--azul-elgas); margin: 0 0 10px 0; }
 
-        hr {
-            border: 0;
-            border-top: 1px solid #eeeeee;
-            margin: 15px 0;
-        }
+        .contact-container { display: flex; justify-content: center; padding: 80px 8%; gap: 5%; flex-wrap: wrap; max-width: 1300px; margin: 0 auto; position: relative; }
+        .info-box { flex: 1; min-width: 300px; text-align: left; padding: 10px; }
+        .info-box h3 { font-size: 26px; border-bottom: 3px solid var(--azul-elgas); padding-bottom: 10px; margin-bottom: 30px; color: #000; display: block; }
+        .info-box p { margin: 15px 0; font-size: 16px; }
+        .policy-link { color: var(--azul-elgas); font-weight: bold; text-decoration: none; }
+        .policy-link:hover { text-decoration: underline; }
+        
+        /* FORMULARIO DE CONTACTO */
+        .form-box { flex: 1; min-width: 300px; max-width: 500px; border: 1px solid #ddd; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: white; text-align: left; }
+        .form-box h2 { font-size: 28px; margin: 0 0 5px 0; color: var(--azul-oscuro); font-weight: bold; text-align: center; }
+        .form-box p { text-align: center; margin-bottom: 25px; color: #666; font-size: 15px; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; font-size: 14px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; font-size: 15px; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--azul-elgas); outline: none; }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        
+        .btn-enviar { background: var(--naranja); color: white; border: none; padding: 12px 0; border-radius: 25px; font-weight: bold; font-size: 16px; width: 100%; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; text-align: center; }
+        .btn-enviar:hover { background: #e26f1e; transform: translateY(-2px); }
 
-        /* Botón Estándar */
-        .btn-main {
-            background-color: var(--primary-red);
-            color: white;
-            padding: 12px 30px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            border-radius: 4px;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .btn-main:hover {
-            transform: translateY(-2px);
-            background-color: #b3161a;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        /* Botón Flotante WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--whatsapp-green);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1) translateY(-3px);
-            background-color: #128c7e;
-        }
-
-        /* ----------------------------------
-           SECCIONES DE LA PÁGINA
-        ---------------------------------- */
-
-        /* Header & Hero con Imagen imag_1.png */
-        .hero {
-            height: 85vh;
-            min-height: 500px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), 
-                        url('imag_1.png');
-            background-size: cover;
-            background-position: center top;
-            display: flex;
-            flex-direction: column;
-            color: white;
-            position: relative;
-        }
-
-        .navbar {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            color: white;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-red);
-        }
-
-        .hero-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-top: -50px;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            background-color: var(--primary-red);
-            padding: 2px 10px;
-        }
-
-        /* Buscador */
-        .search-container {
-            background-color: #eeeeee;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .search-container h2 {
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .search-box {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            background: white;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .search-box input {
-            flex: 1;
-            padding: 15px 20px;
-            border: 1px solid #dddddd;
-            border-right: none;
-            border-radius: 4px 0 0 4px;
-            font-size: 1rem;
-        }
-
-        .search-box button {
-            padding: 0 30px;
-            background-color: white;
-            color: var(--primary-red);
-            border: 1px solid #dddddd;
-            border-left: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
-        /* Características Visuales - imagen_2.png e imagen_3.png */
-        .features-visual {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            flex: 1;
-            max-width: 450px;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: relative;
-        }
-
-        .feature-card img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .feature-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            padding: 30px 20px 20px;
-            color: white;
-        }
-
-        .feature-info h3 {
-            text-transform: uppercase;
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-
-        .feature-info h3 span {
-            color: var(--primary-red);
-        }
-
-        .feature-info p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        /* Suscripciones */
-        .pricing {
-            text-align: center;
-            padding: 80px 20px;
-            background-color: var(--light-bg);
-        }
-
-        .pricing h2 {
-            text-transform: uppercase;
-            margin-bottom: 50px;
-        }
-
-        .pricing h2 span {
-            color: var(--primary-red);
-        }
-
-        .plans-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .plan-card {
-            background: white;
-            border: 1px solid #eeeeee;
-            padding: 50px 30px;
-            border-radius: 8px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .plan-card.featured {
-            border: 2px solid var(--primary-red);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            transform: scale(1.03);
-            z-index: 10;
-        }
-
-        .featured-tag {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: var(--primary-red);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: bold;
-            padding: 4px 8px;
-            text-transform: uppercase;
-            border-radius: 20px;
-        }
-
-        .plan-card h3 {
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        .plan-card .price {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: var(--primary-red);
-            margin-bottom: 2px;
-        }
-
-        .plan-card .price span {
-            font-size: 0.9rem;
-            color: var(--text-sub);
-        }
-
-        .plan-period {
-            font-size: 0.8rem;
-            color: var(--text-sub);
-            margin-bottom: 20px;
-        }
-
-        .plan-features {
-            font-size: 0.9rem;
-            color: var(--text-main);
-            text-align: left;
-            margin-bottom: 30px;
-            flex-grow: 1;
-        }
-
-        .plan-features li {
-            margin-bottom: 8px;
-            padding-left: 15px;
-            position: relative;
-        }
-
-        .plan-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-red);
-        }
-
-        /* Sección Inferior Informacional - imagen4.png e imagen5.png */
-        .info-sections {
-            display: flex;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        .info-col {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .info-image {
-            width: 200px;
-            height: 250px;
-            object-fit: contain;
-        }
-
-        .info-text-box h3 {
-            font-size: 1.6rem;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            color: #444;
-        }
-
-        .info-text-box ul {
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .info-text-box li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 5px;
-        }
-
-        .info-text-box li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-red);
-            font-weight: bold;
-        }
-
-        /* Final Banner - imagen5.png usado de fondo */
-        .final-cta {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), 
-                        url('imagen5.png');
-            background-size: cover;
-            background-position: center bottom;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .final-cta h2 {
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .final-cta p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero h1 { font-size: 2.5rem; }
-            .features-visual { flex-direction: column; align-items: center; }
-            .feature-card { width: 100%; }
-            .plans-grid { grid-template-columns: 1fr; gap: 40px; }
-            .plan-card.featured { transform: scale(1); }
-            .info-sections { flex-direction: column; text-align: center; }
-            .info-col { flex-direction: column-reverse; gap: 10px;}
-            .info-image { width: 150px; height: auto;}
-            .info-text-box li::before { position: relative; left: -10px;}
-        }
+        /* EL BOTÓN DE WHATSAPP QUE LLEVA A PLAY STORE */
+        .floating { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; z-index: 1000; }
+        .chat-tag { background: white; padding: 5px 15px; border-radius: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); font-weight: bold; font-size: 12px; }
+        .wa-btn { background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: 0.3s; }
+        .wa-btn:hover { transform: scale(1.1); }
 
         @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 10px; }
-            .nav-links { display: none; } /* Ocultar para simplificar en móvil */
-            .hero-content { margin-top: 20px; }
-            .hero h1 { font-size: 2rem; }
-            .search-box { flex-direction: column; }
-            .search-box input { border-radius: 4px 4px 0 0; border-right: 1px solid #ddd;}
-            .search-box button { padding: 15px; border-radius: 0 0 4px 4px; border-top: none;}
+            /* SE AJUSTÓ LA POSICIÓN EN MÓVILES PARA QUE NO SE CORTE */
+            body { background-size: 300px; background-position: left 2% center; }
+            .contact-container { padding: 40px 5%; }
         }
-
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/593963969803?text=Hola!%20Me%20gustaría%20obtener%20más%20información%20sobre%20los%20planes%20y%20sedes%20de%20Taurus%20Fitness%20Center" class="whatsapp-float" target="_blank" aria-label="Chat con Taurus en WhatsApp">
-        <svg width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.17-.479 1.338-.942.168-.464.168-.863.118-.942-.049-.079-.182-.133-.38-.232z"/>
-        </svg>
-    </a>
+    <div class="top-info">
+        🚀 DESCARGA LA APP OFICIAL | QUITO - ECUADOR
+    </div>
 
-    <header class="hero">
-        <nav class="navbar">
-            <div class="logo">
-                <strong style="color: var(--primary-red); font-size: 1.5rem;">TAURUS</strong> FITNESS CENTER
-            </div>
-            <ul class="nav-links">
-                <li><a href="#buscar">Inicio</a></li>
-                <li><a href="#buscar">Gimnasios</a></li>
-                <li><a href="#planes">Beneficios</a></li>
-                <li><a href="#buscar">Sedes</a></li>
-                <li><a href="#buscar">Regístrate</a></li>
-            </ul>
-        </nav>
-        <div class="hero-content">
-            <h1>EL GIMNASIO DONDE <br><span>SACAS TU MEJOR VERSIÓN</span></h1>
-            <a href="https://wa.me/593963969803" class="btn-main" target="_blank">ÚNETE AHORA - $21.80</a>
+    <nav class="navbar">
+        <img src="icon_elgas.png" alt="EL GAS" class="logo-nav" onclick="location.reload();">
+        <div class="menu">
+            <a onclick="location.reload();">Inicio</a>
+            <a href="https://play.google.com/store/apps/details?id=com.carrerabg.elgas" target="_blank">Descargar App</a>
+            <a href="#contacto-form">Contacto</a>
         </div>
-    </header>
+    </nav>
 
-    <section id="buscar" class="search-container">
-        <h2>ENCUENTRA TU GIMNASIO IDEAL</h2>
-        <div class="search-box">
-            <input type="text" placeholder="Ej: Quito Centro, Guayaquil del Sol, La Carolina...">
-            <button type="submit">BUSCAR 🔍</button>
+    <section class="app-section">
+        <h1>App EL GAS para Ecuador</h1>
+        <p>Ahorra tiempo y combustible gestionando tus pedidos desde el celular.</p>
+        
+        <a href="https://play.google.com/store/apps/details?id=com.carrerabg.elgas" target="_blank" class="playstore-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" width="180" alt="Google Play">
+        </a>
+
+        <div class="qr-container">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://play.google.com/store/apps/details?id=com.carrerabg.elgas" 
+                 alt="Código QR El Gas" class="qr-code">
+            <div class="qr-text">ESCÁNEAME PARA DESCARGAR</div>
+        </div>
+
+        <div class="features">
+            <div class="card"><i class="fa fa-mobile"></i><h3>App Fácil</h3><p>Para usuarios y conductores.</p></div>
+            <div class="card"><i class="fa fa-map-marker"></i><h3>GPS Real</h3><p>Rastreo exacto en Quito.</p></div>
+            <div class="card"><i class="fa fa-bell"></i><h3>Alertas</h3><p>Notificaciones en tiempo real.</p></div>
         </div>
     </section>
 
-    <section class="features-visual">
-        <div class="feature-card">
-            <img src="imagen_2.png" alt="Sedes con equipos de alta tecnología">
-            <div class="feature-info">
-                <h3>ACCESO <span>ILIMITADO</span></h3>
-                <p>Entrena en cualquier sede a nivel nacional.</p>
-            </div>
+    <section class="contact-container" id="contacto-form">
+        <div class="info-box">
+            <h3>Información</h3>
+            <p><b>Ciudad:</b> Quito - Ecuador</p>
+            <p><b>Soporte:</b> tgaplicacionec@gmail.com</p>
+            <p><a href="https://juanfran77.github.io/politicas-de-privacidad-elgas/" class="policy-link" target="_blank">Políticas de Privacidad</a></p>
         </div>
-        <div class="feature-card">
-            <img src="imagen_3.png" alt="Planes con la mejor relación costo beneficio">
-            <div class="feature-info">
-                <h3>EL MEJOR <span>PRECIO</span></h3>
-                <p>Equipamiento profesional desde $21.80.</p>
-            </div>
+
+        <div class="form-box">
+            <h2>Contacto y Comentarios</h2>
+            <p>Escríbenos tus dudas o sugerencias sobre la aplicación.</p>
+            
+            <form action="mailto:tgaplicacionec@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensaje">Mensaje o Comentario</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Escribe aquí tu mensaje..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-enviar">ENVIAR MENSAJE</button>
+            </form>
         </div>
     </section>
 
-    <section id="planes" class="pricing">
-        <h2>NUESTRAS <span>SUSCRIPCIONES</span></h2>
-        <div class="plans-grid">
-            <div class="plan-card">
-                <h3>TAURUS</h3>
-                <p class="price">$21.80<span>/mes</span></p>
-                <p class="plan-period">(Plan Anual)</p>
-                <ul class="plan-features">
-                    <li>Sede elegida</li>
-                    <li>Zona de pesas ilimitada</li>
-                    <li>Zona cardiovascular</li>
-                    <li>Clases grupales</li>
-                    <li>Duchas y vestidores</li>
-                </ul>
-                <a href="https://wa.me/593963969803?text=Hola,%20me%20interesa%20el%20plan%20Taurus%20de%20$21.80" class="btn-main" target="_blank">ELEGIR PLAN</a>
-            </div>
-            <div class="plan-card featured">
-                <span class="featured-tag">RECOMENDADO</span>
-                <h3>PLUS</h3>
-                <p class="price">$27.80<span>/mes</span></p>
-                <p class="plan-period">(Plan Anual)</p>
-                <ul class="plan-features">
-                    <li>Todo el Plan Taurus</li>
-                    <li>Acceso a todas las sedes</li>
-                    <li>1 invitado gratis (5 veces/mes)</li>
-                    <li>Clases exclusivas</li>
-                    <li>Área VIP</li>
-                </ul>
-                <a href="https://wa.me/593963969803?text=Hola,%20me%20interesa%20el%20plan%20Plus%20de%20$27.80" class="btn-main" target="_blank">ELEGIR PLAN</a>
-            </div>
-            <div class="plan-card">
-                <h3>PREMIUM</h3>
-                <p class="price">$34.80<span>/mes</span></p>
-                <p class="plan-period">(Plan Semestral/Anual)</p>
-                <ul class="plan-features">
-                    <li>Todo el Plan Plus</li>
-                    <li>Entrenamiento inteligente</li>
-                    <li>Asesoría nutricional básica</li>
-                    <li>Descuentos en suplementos</li>
-                    <li>Acceso a piscina (sedes seleccionadas)</li>
-                </ul>
-                <a href="https://wa.me/593963969803?text=Hola,%20me%20interesa%20el%20plan%20Premium%20de%20$34.80" class="btn-main" target="_blank">ELEGIR PLAN</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="info-sections">
-        <div class="info-col">
-            <img src="imagen4.png" alt="Atleta femenina en entrenamiento" class="info-image">
-            <div class="info-text-box">
-                <h3>TÚ ERES <span>ÚNICO</span></h3>
-                <ul>
-                    <li>Planes personalizados</li>
-                    <li>Evaluación física inicial</li>
-                    <li>Asesores certificados</li>
-                </ul>
-                <a href="https://wa.me/593963969803" class="btn-main" target="_blank">VAMOS A ENTRENAR</a>
-            </div>
-        </div>
-        <div class="info-col">
-            <img src="imagen5.png" alt="Atleta masculino entrenando con peso" class="info-image">
-            <div class="info-text-box">
-                <h3>TU RESULTADO ES <span>NUESTRO OBJETIVO</span></h3>
-                <ul>
-                    <li>Equipos de última generación</li>
-                    <li>Entrenamientos dinámicos</li>
-                    <li>Variedad de clases grupales</li>
-                </ul>
-                <a href="https://wa.me/593963969803" class="btn-main" target="_blank">CONOCE LAS SEDES</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="final-cta">
-        <h2>¡NO PARES NUNCA!</h2>
-        <p>Mejora tu ritmo cada semana con nuestras nuevas clases colectivas y tecnología de entrenamiento inteligente.</p>
-        <a href="https://wa.me/593963969803" class="btn-main" target="_blank">CHATEAR CON UN ASESOR</a>
-    </section>
+    <div class="floating">
+        <div class="chat-tag">¿Necesitas ayuda?</div>
+        <a href="https://play.google.com/store/apps/details?id=com.carrerabg.elgas" class="wa-btn" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="Descargar App">
+        </a>
+    </div>
 
 </body>
 </html>
