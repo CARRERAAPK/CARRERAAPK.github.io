@@ -1,8 +1,3 @@
-¡Claro! He aplicado el fondo de escritorio.png a toda la sección inferior (la zona de contacto y el footer). Para lograr el efecto de marca de agua, he utilizado un degradado lineal sobre la imagen con una opacidad del 94%, lo que permite que el contenido sea perfectamente legible mientras la imagen se nota sutilmente al fondo.
-
-Aquí tienes el archivo completo:
-
-HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -61,7 +56,7 @@ HTML
         .menu a { text-decoration: none; color: #333; margin: 0 15px; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .menu a:hover { color: var(--naranja); }
 
-        /* SECCIÓN AZUL SUPERIOR */
+        /* SECCIÓN AZUL */
         .app-section { background: var(--azul-elgas); color: white; padding: 60px 20px; position: relative; }
         .app-section h1 { font-size: 38px; margin: 0 0 10px; }
         .playstore-btn { display: inline-block; margin: 20px 0 10px; transition: transform 0.2s; }
@@ -83,34 +78,37 @@ HTML
         .card i { font-size: 40px; color: var(--naranja); margin-bottom: 15px; display: block; }
         .card h3 { color: var(--azul-elgas); margin: 0 0 10px 0; font-size: 22px; }
 
-        /* SECCIÓN INFERIOR CON FONDO MARCA DE AGUA */
+        /* SECCIÓN INFERIOR CON MARCA DE AGUA MÁS CLARA (0.85) */
         .bottom-wrapper {
-            background-image: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)), url('escritorio.png');
+            background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('escritorio.png');
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            border-top: 2px solid #eee;
         }
 
         .contact-container { display: flex; justify-content: center; padding: 80px 8%; gap: 5%; flex-wrap: wrap; max-width: 1300px; margin: 0 auto; }
-        .info-box { flex: 1; min-width: 300px; text-align: left; padding: 10px; }
+        
+        /* Cajas de info más legibles sobre el fondo */
+        .info-box { flex: 1; min-width: 300px; text-align: left; padding: 20px; background: rgba(255, 255, 255, 0.4); border-radius: 10px; }
         .info-box h3 { font-size: 26px; border-bottom: 3px solid var(--azul-elgas); padding-bottom: 10px; margin-bottom: 30px; color: #000; }
-        .info-box p { margin: 15px 0; font-size: 17px; }
+        .info-box p { margin: 15px 0; font-size: 17px; font-weight: 500; }
         .policy-link { color: var(--azul-elgas); font-weight: bold; text-decoration: none; }
         .policy-link:hover { text-decoration: underline; }
         
-        .form-box { flex: 1; min-width: 300px; max-width: 500px; border: 1px solid #ddd; padding: 40px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); background: rgba(255, 255, 255, 0.9); text-align: left; }
+        .form-box { flex: 1; min-width: 300px; max-width: 500px; border: 1px solid #ddd; padding: 40px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background: rgba(255, 255, 255, 0.95); text-align: left; }
         .form-box h2 { font-size: 28px; margin: 0 0 5px 0; color: var(--azul-oscuro); font-weight: bold; text-align: center; }
-        .form-box p { text-align: center; margin-bottom: 25px; color: #666; font-size: 15px; }
+        .form-box p { text-align: center; margin-bottom: 25px; color: #444; font-size: 15px; }
         
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; font-size: 14px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; font-size: 15px; background: rgba(255,255,255,0.8); }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--azul-elgas); outline: none; box-shadow: 0 0 5px rgba(7,90,168,0.2); background: #fff; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #bbb; border-radius: 6px; font-family: inherit; font-size: 15px; background: #fff; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--azul-elgas); outline: none; box-shadow: 0 0 5px rgba(7,90,168,0.2); }
         .form-group textarea { resize: vertical; min-height: 100px; }
         
         .btn-enviar { background: var(--naranja); color: white; border: none; padding: 14px 0; border-radius: 30px; font-weight: bold; font-size: 16px; width: 100%; cursor: pointer; transition: 0.3s; text-transform: uppercase; }
-        .btn-enviar:hover { background: #e26f1e; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(243,130,48,0.3); }
+        .btn-enviar:hover { background: #e26f1e; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(243,130,48,0.4); }
 
         .floating { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; z-index: 1000; }
         .chat-tag { background: white; padding: 6px 15px; border-radius: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); font-weight: bold; font-size: 13px; color: #333; border: 1px solid #eee; }
@@ -211,10 +209,11 @@ HTML
             </div>
         </section>
 
-        <footer style="padding: 40px 20px; font-size: 14px; color: #555; font-weight: bold;">
+        <footer style="padding: 40px 20px; font-size: 14px; color: #333; font-weight: bold;">
             &copy; 2024 EL GAS Ecuador - Todos los derechos reservados.
         </footer>
     </div>
+
     <div class="floating">
         <div class="chat-tag">¿Necesitas ayuda?</div>
         <a href="https://wa.me/593996086109" class="wa-btn" target="_blank">
