@@ -1,3 +1,8 @@
+¡Claro! He aplicado el fondo de escritorio.png a toda la sección inferior (la zona de contacto y el footer). Para lograr el efecto de marca de agua, he utilizado un degradado lineal sobre la imagen con una opacidad del 94%, lo que permite que el contenido sea perfectamente legible mientras la imagen se nota sutilmente al fondo.
+
+Aquí tienes el archivo completo:
+
+HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,13 +31,6 @@
             color: #333; 
             background-color: #fff; 
             line-height: 1.6;
-            
-            /* Imagen de fondo sutil */
-            background-image: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('escritorio.jpg');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
         }
         
         .top-info { background: var(--azul-oscuro); color: white; padding: 8px; font-size: 13px; position: relative; z-index: 10; font-weight: bold; }
@@ -49,12 +47,8 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
         }
         
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
+        .logo-container { display: flex; align-items: center; }
         
-        /* Ajuste del logo icono_el_gas */
         .logo-nav { 
             height: 65px; 
             width: auto;
@@ -67,6 +61,7 @@
         .menu a { text-decoration: none; color: #333; margin: 0 15px; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .menu a:hover { color: var(--naranja); }
 
+        /* SECCIÓN AZUL SUPERIOR */
         .app-section { background: var(--azul-elgas); color: white; padding: 60px 20px; position: relative; }
         .app-section h1 { font-size: 38px; margin: 0 0 10px; }
         .playstore-btn { display: inline-block; margin: 20px 0 10px; transition: transform 0.2s; }
@@ -88,6 +83,15 @@
         .card i { font-size: 40px; color: var(--naranja); margin-bottom: 15px; display: block; }
         .card h3 { color: var(--azul-elgas); margin: 0 0 10px 0; font-size: 22px; }
 
+        /* SECCIÓN INFERIOR CON FONDO MARCA DE AGUA */
+        .bottom-wrapper {
+            background-image: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)), url('escritorio.png');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
         .contact-container { display: flex; justify-content: center; padding: 80px 8%; gap: 5%; flex-wrap: wrap; max-width: 1300px; margin: 0 auto; }
         .info-box { flex: 1; min-width: 300px; text-align: left; padding: 10px; }
         .info-box h3 { font-size: 26px; border-bottom: 3px solid var(--azul-elgas); padding-bottom: 10px; margin-bottom: 30px; color: #000; }
@@ -95,14 +99,14 @@
         .policy-link { color: var(--azul-elgas); font-weight: bold; text-decoration: none; }
         .policy-link:hover { text-decoration: underline; }
         
-        .form-box { flex: 1; min-width: 300px; max-width: 500px; border: 1px solid #ddd; padding: 40px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); background: white; text-align: left; }
+        .form-box { flex: 1; min-width: 300px; max-width: 500px; border: 1px solid #ddd; padding: 40px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); background: rgba(255, 255, 255, 0.9); text-align: left; }
         .form-box h2 { font-size: 28px; margin: 0 0 5px 0; color: var(--azul-oscuro); font-weight: bold; text-align: center; }
         .form-box p { text-align: center; margin-bottom: 25px; color: #666; font-size: 15px; }
         
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; font-size: 14px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; font-size: 15px; }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--azul-elgas); outline: none; box-shadow: 0 0 5px rgba(7,90,168,0.2); }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; font-size: 15px; background: rgba(255,255,255,0.8); }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--azul-elgas); outline: none; box-shadow: 0 0 5px rgba(7,90,168,0.2); background: #fff; }
         .form-group textarea { resize: vertical; min-height: 100px; }
         
         .btn-enviar { background: var(--naranja); color: white; border: none; padding: 14px 0; border-radius: 30px; font-weight: bold; font-size: 16px; width: 100%; cursor: pointer; transition: 0.3s; text-transform: uppercase; }
@@ -173,49 +177,50 @@
         </div>
     </section>
 
-    <section class="contact-container" id="contacto-form">
-        <div class="info-box">
-            <h3>Información</h3>
-            <p><i class="fa fa-map-pin" style="color:var(--azul-elgas)"></i> <b>Ciudad:</b> Quito - Ecuador</p>
-            <p><i class="fa fa-envelope" style="color:var(--azul-elgas)"></i> <b>Soporte:</b> tgaplicacionec@gmail.com</p>
-            <p><i class="fa fa-file-text" style="color:var(--azul-elgas)"></i> <a href="https://carreraapk.github.io/Politicas-de-privacidad-app-ELGAS/" class="policy-link" target="_blank">Políticas de Privacidad</a></p>
-        </div>
+    <div class="bottom-wrapper">
+        <section class="contact-container" id="contacto-form">
+            <div class="info-box">
+                <h3>Información</h3>
+                <p><i class="fa fa-map-pin" style="color:var(--azul-elgas)"></i> <b>Ciudad:</b> Quito - Ecuador</p>
+                <p><i class="fa fa-envelope" style="color:var(--azul-elgas)"></i> <b>Soporte:</b> tgaplicacionec@gmail.com</p>
+                <p><i class="fa fa-file-text" style="color:var(--azul-elgas)"></i> <a href="https://carreraapk.github.io/Politicas-de-privacidad-app-ELGAS/" class="policy-link" target="_blank">Políticas de Privacidad</a></p>
+            </div>
 
-        <div class="form-box">
-            <h2>Contacto y Comentarios</h2>
-            <p>¿Tienes dudas o sugerencias? Estaremos gustosos de atenderte.</p>
-            
-            <form action="mailto:tgaplicacionec@gmail.com" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label for="nombre">Nombre Completo</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
-                </div>
+            <div class="form-box">
+                <h2>Contacto y Comentarios</h2>
+                <p>¿Tienes dudas o sugerencias? Estaremos gustosos de atenderte.</p>
                 
-                <div class="form-group">
-                    <label for="correo">Correo Electrónico</label>
-                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="mensaje">Mensaje o Comentario</label>
-                    <textarea id="mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn-enviar">ENVIAR MENSAJE</button>
-            </form>
-        </div>
-    </section>
+                <form action="mailto:tgaplicacionec@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje o Comentario</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar">ENVIAR MENSAJE</button>
+                </form>
+            </div>
+        </section>
 
+        <footer style="padding: 40px 20px; font-size: 14px; color: #555; font-weight: bold;">
+            &copy; 2024 EL GAS Ecuador - Todos los derechos reservados.
+        </footer>
+    </div>
     <div class="floating">
         <div class="chat-tag">¿Necesitas ayuda?</div>
         <a href="https://wa.me/593996086109" class="wa-btn" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="Chat de WhatsApp">
         </a>
     </div>
-
-    <footer style="padding: 20px; font-size: 14px; color: #777;">
-        &copy; 2024 EL GAS Ecuador - Todos los derechos reservados.
-    </footer>
 
 </body>
 </html>
