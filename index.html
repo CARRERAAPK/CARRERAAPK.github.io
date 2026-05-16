@@ -13,6 +13,7 @@
             --azul-elgas: #075AA8;
             --azul-oscuro: #003366;
             --naranja: #f38230;
+            --rojo-borrar: #d9534f;
         }
 
         * { box-sizing: border-box; }
@@ -86,7 +87,7 @@
             border-top: 4px solid var(--naranja);
         }
 
-        .contact-container { display: flex; justify-content: center; padding: 80px 8%; gap: 5%; flex-wrap: wrap; max-width: 1300px; margin: 0 auto; }
+        .contact-container { display: flex; justify-content: center; padding: 60px 8%; gap: 30px; flex-wrap: wrap; max-width: 1300px; margin: 0 auto; }
         
         .info-box { 
             flex: 1; 
@@ -97,8 +98,11 @@
             border-radius: 15px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
         }
-        .info-box h3 { font-size: 26px; border-bottom: 3px solid var(--azul-elgas); padding-bottom: 10px; margin-bottom: 30px; color: #000; }
-        .info-box p { margin: 15px 0; font-size: 17px; font-weight: bold; color: #000; }
+        .info-box h3 { font-size: 24px; border-bottom: 3px solid var(--azul-elgas); padding-bottom: 10px; margin-bottom: 20px; color: #000; }
+        .info-box h3.delete-title { border-bottom: 3px solid var(--rojo-borrar); }
+        .info-box p { margin: 15px 0; font-size: 16px; color: #000; }
+        .info-box ul { padding-left: 20px; color: #000; font-size: 15px; }
+        .info-box ul li { margin-bottom: 8px; }
         .policy-link { color: var(--azul-elgas); font-weight: 800; text-decoration: none; }
         .policy-link:hover { text-decoration: underline; }
         
@@ -113,21 +117,30 @@
             background: rgba(255, 255, 255, 0.98); 
             text-align: left; 
         }
-        .form-box h2 { font-size: 28px; margin: 0 0 5px 0; color: var(--azul-oscuro); font-weight: bold; text-align: center; }
+        .form-box h2 { font-size: 26px; margin: 0 0 5px 0; color: var(--azul-oscuro); font-weight: bold; text-align: center; }
+        .form-box h2.delete-form-title { color: var(--rojo-borrar); }
         .form-box p { text-align: center; margin-bottom: 25px; color: #000; font-size: 15px; font-weight: 600; }
         
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #000; font-size: 14px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #999; border-radius: 6px; font-family: inherit; font-size: 15px; background: #fff; }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--azul-elgas); outline: none; box-shadow: 0 0 8px rgba(7,90,168,0.4); }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 2px solid #999; border-radius: 6px; font-family: inherit; font-size: 15px; background: #fff; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--azul-elgas); outline: none; box-shadow: 0 0 8px rgba(7,90,168,0.4); }
         
         .btn-enviar { background: var(--naranja); color: white; border: none; padding: 16px 0; border-radius: 35px; font-weight: bold; font-size: 16px; width: 100%; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         .btn-enviar:hover { background: #e26f1e; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(243,130,48,0.6); }
+        
+        .btn-borrar { background: var(--rojo-borrar); }
+        .btn-borrar:hover { background: #c9302c; box-shadow: 0 6px 20px rgba(217,83,79,0.6); }
 
         .floating { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; z-index: 1000; }
         .chat-tag { background: white; padding: 6px 15px; border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.3); font-weight: bold; font-size: 13px; color: #333; }
         .wa-btn { background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: 0.3s; }
         .wa-btn:hover { transform: scale(1.15); background: #20ba5a; }
+
+        @media (max-width: 1024px) {
+            .contact-container { flex-direction: column; align-items: center; }
+            .info-box, .form-box { width: 100%; max-width: 600px; }
+        }
 
         @media (max-width: 768px) {
             .navbar { flex-direction: column; padding: 15px; }
@@ -151,6 +164,7 @@
             <a href="index.html">Inicio</a>
             <a href="https://play.google.com/store/apps/details?id=com.juanfran77githubio1.elgas" target="_blank">Descargar App</a>
             <a href="#contacto-form">Contacto</a>
+            <a href="#eliminacion-datos">Eliminar Datos</a>
         </div>
     </nav>
 
@@ -192,7 +206,7 @@
             <div class="info-box">
                 <h3>Información</h3>
                 <p><i class="fa fa-map-pin" style="color:var(--azul-elgas)"></i> <b>Ciudad:</b> Quito - Ecuador</p>
-                <p><i class="fa fa-envelope" style="color:var(--azul-elgas)"></i> <b>Soporte:</b> tgaplicacionec@gmail.com</p>
+                <p><i class="fa fa-envelope" style="color:var(--azul-elgas)"></i> <b>Soporte:</b> aplicacionesjfch@gmail.com</p>
                 <p><i class="fa fa-file-text" style="color:var(--azul-elgas)"></i> <a href="https://carreraapk.github.io/Politicas-de-privacidad-app-ELGAS/" class="policy-link" target="_blank">Políticas de Privacidad</a></p>
             </div>
 
@@ -200,7 +214,7 @@
                 <h2>Contacto y Comentarios</h2>
                 <p>¿Tienes dudas o sugerencias? Estaremos gustosos de atenderte.</p>
                 
-                <form action="mailto:jfcarrerah@gmail.com" method="post" enctype="text/plain">
+                <form action="mailto:aplicacionesjfch@gmail.com" method="post" enctype="text/plain">
                     <div class="form-group">
                         <label for="nombre">Nombre Completo</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
@@ -217,6 +231,56 @@
                     </div>
                     
                     <button type="submit" class="btn-enviar">ENVIAR MENSAJE</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="contact-container" id="eliminacion-datos" style="padding-top: 0;">
+            <div class="info-box">
+                <h3 class="delete-title"><i class="fa fa-trash" style="color:var(--rojo-borrar)"></i> Eliminación de Datos y Cuenta</h3>
+                <p>En <b>EL GAS</b> garantizamos tu derecho a la privacidad. Si deseas eliminar tu cuenta de usuario y borrar de manera definitiva todos los datos asociados a ella, sigue estos pasos:</p>
+                <ul>
+                    <li>Completa el formulario adjunto indicando el correo con el que te registraste en la aplicación.</li>
+                    <li>Una vez recibida la solicitud, nuestro equipo procesará la baja en un plazo máximo de 72 horas laborables.</li>
+                    <li><b>Datos que se eliminarán:</b> Nombre, correo electrónico, historial de direcciones de entrega, números de teléfono y registros de pedidos anteriores.</li>
+                    <li><b>Nota:</b> Esta acción es irreversible. Una vez borrados los datos, no podrás recuperar el acceso a tu cuenta.</li>
+                </ul>
+                <p>También puedes realizar esta solicitud directamente escribiendo un correo con el asunto "Eliminación de datos App El Gas" a: <b>aplicacionesjfch@gmail.com</b>.</p>
+            </div>
+
+            <div class="form-box" style="border-color: var(--rojo-borrar);">
+                <h2 class="delete-form-title">Solicitud de Borrado</h2>
+                <p>Completa este formulario para iniciar el proceso de eliminación de tu información.</p>
+                
+                <form action="mailto:aplicacionesjfch@gmail.com?subject=Solicitud%20de%20Eliminacion%20de%20Datos%20-%20EL%20GAS" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="del-nombre">Nombre de Usuario registrado</label>
+                        <input type="text" id="del-nombre" name="Nombre registrado" placeholder="Ej. Juan Pérez" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="del-correo">Correo electrónico de la cuenta</label>
+                        <input type="email" id="del-correo" name="Correo de la cuenta" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="del-motivo">Motivo de la eliminación (Opcional)</label>
+                        <select id="del-motivo" name="Motivo">
+                            <option value="Ya no uso la aplicacion">Ya no uso la aplicación</option>
+                            <option value="Preocupaciones por la privacidad">Preocupaciones por la privacidad</option>
+                            <option value="Problemas con el funcionamiento">Problemas con el funcionamiento</option>
+                            <option value="Otro">Otro motivo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="del-confirmacion">
+                            <input type="checkbox" id="del-confirmacion" name="Confirma borrado" value="SI" required style="width: auto; margin-right: 10px;">
+                            Comprendo que esta acción borrará permanentemente mis datos y es irreversible.
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar btn-borrar">SOLICITAR ELIMINACIÓN NOW</button>
                 </form>
             </div>
         </section>
